@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B26D2EFDB39093700A64382 /* HarioSwitchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188D58D02611D586C051B8C /* HarioSwitchApp.swift */; };
+		81A57AF044B8DC1D379D0EA1 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB29BA78884CAE7BE04B2A /* ActionType.swift */; };
+		EAA76073796ED9609BBA20E8 /* SwitchPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */; };
+		1B090EF52C34D9DAE094235D /* BrewStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16910417BFFDAE62737ABDF4 /* BrewStep.swift */; };
+		27724CA35DB383BDD20A2D8E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB073BA777B6B1A03BE773CC /* Recipe.swift */; };
+		170FE0986DDC2B23163B33B4 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */; };
+		26DBEE9021C8C091A4DFF8EE /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */; };
+		D53C40EB43E0E6D4C1E3903F /* StepEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CF55E7E24E6221FDF79600 /* StepEditorView.swift */; };
+		AF2C49BA4F7882C0C7F0C1F1 /* BrewTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */; };
+		71DD7E98B96A6447CED0103E /* BrewTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */; };
+		E03871BEE47EE5CE077B553E /* DefaultRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */; };
+		99810209AD4FE3320BC122AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81918909E83595C8F4212CCC /* HarioSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarioSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0188D58D02611D586C051B8C /* HarioSwitchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarioSwitchApp.swift; sourceTree = "<group>"; };
+		7DCB29BA78884CAE7BE04B2A /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPosition.swift; sourceTree = "<group>"; };
+		16910417BFFDAE62737ABDF4 /* BrewStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewStep.swift; sourceTree = "<group>"; };
+		EB073BA777B6B1A03BE773CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		97CF55E7E24E6221FDF79600 /* StepEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepEditorView.swift; sourceTree = "<group>"; };
+		CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTimerView.swift; sourceTree = "<group>"; };
+		DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTimerManager.swift; sourceTree = "<group>"; };
+		F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRecipes.swift; sourceTree = "<group>"; };
+		A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E07120471D7CAA46DCD94528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D3FC6DB5D0827F168A73277 = {
+			isa = PBXGroup;
+			children = (
+				E4F9B9B828BD894C7208C99D /* HarioSwitch */,
+				1BADDC1D73C1A20F347483E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BADDC1D73C1A20F347483E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81918909E83595C8F4212CCC /* HarioSwitch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4F9B9B828BD894C7208C99D /* HarioSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				0188D58D02611D586C051B8C /* HarioSwitchApp.swift */,
+				E7651EE138212D3A5C27ABA0 /* Models */,
+				9CECDDFA5EF2AE0232F90708 /* Views */,
+				3FAA64621DC4E411E8DE8EC1 /* ViewModels */,
+				0CC0392CA0D899B5AD0FDA4A /* Utilities */,
+				A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */,
+				2575A824E1DE54D2B26A9A8B /* Preview Content */,
+			);
+			path = HarioSwitch;
+			sourceTree = "<group>";
+		};
+		E7651EE138212D3A5C27ABA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB29BA78884CAE7BE04B2A /* ActionType.swift */,
+				FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */,
+				16910417BFFDAE62737ABDF4 /* BrewStep.swift */,
+				EB073BA777B6B1A03BE773CC /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9CECDDFA5EF2AE0232F90708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */,
+				E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */,
+				97CF55E7E24E6221FDF79600 /* StepEditorView.swift */,
+				CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FAA64621DC4E411E8DE8EC1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0CC0392CA0D899B5AD0FDA4A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2575A824E1DE54D2B26A9A8B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26C0E262C2C1F479D9FF3149 /* HarioSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4555FF564CDA3863A0A5B59 /* Build configuration list for PBXNativeTarget "HarioSwitch" */;
+			buildPhases = (
+				0998B95F2E75B94331298940 /* Sources */,
+				E07120471D7CAA46DCD94528 /* Frameworks */,
+				90D3309A3EDE29A4CEBB8E14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HarioSwitch;
+			productName = HarioSwitch;
+			productReference = 81918909E83595C8F4212CCC /* HarioSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					26C0E262C2C1F479D9FF3149 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 229AFD403D5F98A92FDE08FA /* Build configuration list for PBXProject "HarioSwitch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D3FC6DB5D0827F168A73277;
+			productRefGroup = 1BADDC1D73C1A20F347483E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26C0E262C2C1F479D9FF3149 /* HarioSwitch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90D3309A3EDE29A4CEBB8E14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99810209AD4FE3320BC122AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0998B95F2E75B94331298940 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B26D2EFDB39093700A64382 /* HarioSwitchApp.swift in Sources */,
+				81A57AF044B8DC1D379D0EA1 /* ActionType.swift in Sources */,
+				EAA76073796ED9609BBA20E8 /* SwitchPosition.swift in Sources */,
+				1B090EF52C34D9DAE094235D /* BrewStep.swift in Sources */,
+				27724CA35DB383BDD20A2D8E /* Recipe.swift in Sources */,
+				170FE0986DDC2B23163B33B4 /* RecipeListView.swift in Sources */,
+				26DBEE9021C8C091A4DFF8EE /* RecipeDetailView.swift in Sources */,
+				D53C40EB43E0E6D4C1E3903F /* StepEditorView.swift in Sources */,
+				AF2C49BA4F7882C0C7F0C1F1 /* BrewTimerView.swift in Sources */,
+				71DD7E98B96A6447CED0103E /* BrewTimerManager.swift in Sources */,
+				E03871BEE47EE5CE077B553E /* DefaultRecipes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AD85203BDABA5D77C97D3165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D3517031FC52F361791832BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C424DBF796944789872A5962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7757C39349D56478DC25EEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		229AFD403D5F98A92FDE08FA /* Build configuration list for PBXProject "HarioSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD85203BDABA5D77C97D3165 /* Debug */,
+				D3517031FC52F361791832BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4555FF564CDA3863A0A5B59 /* Build configuration list for PBXNativeTarget "HarioSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C424DBF796944789872A5962 /* Debug */,
+				7757C39349D56478DC25EEF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}

@@ -8,30 +8,28 @@ struct RecipeListView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(recipes) { recipe in
-                    NavigationLink(value: recipe) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(recipe.name)
-                                .font(.headline)
-                            HStack(spacing: 12) {
-                                Label("\(recipe.coffeeGrams, specifier: "%.0f")g", systemImage: "scalemass")
-                                Label("\(recipe.waterML, specifier: "%.0f")ml", systemImage: "drop")
-                                Text(recipe.ratioString)
-                                    .foregroundStyle(.secondary)
-                                Spacer()
-                                Text(recipe.formattedTotalDuration)
-                                    .foregroundStyle(.secondary)
+            ScrollView {
+                if recipes.isEmpty {
+                    emptyState
+                } else {
+                    LazyVStack(spacing: 12) {
+                        ForEach(recipes) { recipe in
+                            NavigationLink(value: recipe) {
+                                RecipeCardView(recipe: recipe, onDelete: {
+                                    withAnimation {
+                                        modelContext.delete(recipe)
+                                    }
+                                })
                             }
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .buttonStyle(.plain)
                         }
-                        .padding(.vertical, 2)
                     }
+                    .padding(.horizontal)
+                    .padding(.top, 8)
                 }
-                .onDelete(perform: deleteRecipes)
             }
-            .navigationTitle("Hario Switch recipies")
+            .background(Color(.systemGroupedBackground))
+            .navigationTitle("Recipes")
             .navigationDestination(for: Recipe.self) { recipe in
                 RecipeDetailView(recipe: recipe)
             }
@@ -40,7 +38,9 @@ struct RecipeListView: View {
                     Button {
                         showingNewRecipe = true
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title3)
+                            .symbolRenderingMode(.hierarchical)
                     }
                 }
             }
@@ -49,21 +49,106 @@ struct RecipeListView: View {
                     RecipeDetailView(recipe: nil)
                 }
             }
-            .overlay {
-                if recipes.isEmpty {
-                    ContentUnavailableView(
-                        "No Recipes",
-                        systemImage: "cup.and.saucer",
-                        description: Text("Tap + to create your first recipe.")
-                    )
-                }
-            }
         }
     }
 
-    private func deleteRecipes(at offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(recipes[index])
+    private var emptyState: some View {
+        VStack(spacing: 16) {
+            Spacer()
+            Image(systemName: "cup.and.saucer.fill")
+                .font(.system(size: 56))
+                .foregroundStyle(.tertiary)
+            Text("No Recipes")
+                .font(.title2.bold())
+            Text("Tap + to create your first recipe.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 120)
+    }
+}
+
+struct RecipeCardView: View {
+    let recipe: Recipe
+    let onDelete: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(recipe.name)
+                        .font(.title3.bold())
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+
+                    Text(recipe.ratioString)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Text(recipe.formattedTotalDuration)
+                    .font(.subheadline.weight(.medium).monospacedDigit())
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(.ultraThinMaterial)
+                    .clipShape(Capsule())
+            }
+
+            Divider()
+
+            HStack(spacing: 16) {
+                RecipeStatView(
+                    icon: "scalemass.fill",
+                    value: String(format: "%.0fg", recipe.coffeeGrams),
+                    color: .brown
+                )
+                RecipeStatView(
+                    icon: "drop.fill",
+                    value: String(format: "%.0fml", recipe.waterML),
+                    color: .cyan
+                )
+                RecipeStatView(
+                    icon: "list.number",
+                    value: "\(recipe.steps.count) steps",
+                    color: .orange
+                )
+            }
+        }
+        .padding(16)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .contextMenu {
+            Button(role: .destructive) {
+                onDelete()
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
         }
     }
+}
+
+struct RecipeStatView: View {
+    let icon: String
+    let value: String
+    let color: Color
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: icon)
+                .font(.caption)
+                .foregroundStyle(color)
+            Text(value)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+    }
+}
+
+#Preview {
+    RecipeListView()
+        .modelContainer(previewContainer)
 }

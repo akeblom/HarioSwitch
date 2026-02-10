@@ -72,7 +72,8 @@ struct RecipeDetailView: View {
                     editingStep = nil
                     showingStepEditor = true
                 } label: {
-                    Label("Add Step", systemImage: "plus.circle")
+                    Label("Add Step", systemImage: "plus.circle.fill")
+                        .symbolRenderingMode(.hierarchical)
                 }
             } header: {
                 HStack {
@@ -89,13 +90,23 @@ struct RecipeDetailView: View {
                     Button {
                         showingBrewTimer = true
                     } label: {
-                        HStack {
+                        HStack(spacing: 10) {
                             Spacer()
-                            Label("Start Brew", systemImage: "play.fill")
+                            Image(systemName: "play.fill")
+                                .font(.body)
+                            Text("Start Brew")
                                 .font(.headline)
                             Spacer()
                         }
+                        .padding(.vertical, 4)
+                        .foregroundStyle(.white)
                     }
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(Color.accentColor.gradient)
+                            .padding(.vertical, 2)
+                            .padding(.horizontal, -4)
+                    )
                 }
             }
         }
@@ -167,15 +178,19 @@ struct StepRowView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: step.actionType.systemImage)
-                .font(.title3)
-                .foregroundStyle(step.actionType == .pour ? .blue : .orange)
-                .frame(width: 28)
+            ZStack {
+                Circle()
+                    .fill(step.actionType.color.opacity(0.12))
+                    .frame(width: 36, height: 36)
+                Image(systemName: step.actionType.systemImage)
+                    .font(.body)
+                    .foregroundStyle(step.actionType.color)
+            }
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 4) {
                     Text(step.actionType.label)
-                        .font(.body)
+                        .font(.body.weight(.medium))
                     if let water = step.waterML {
                         Text("(\(water, specifier: "%.0f")ml)")
                             .font(.subheadline)
@@ -193,13 +208,27 @@ struct StepRowView: View {
                 Image(systemName: step.switchPosition.systemImage)
                     .font(.caption)
                 Text(step.switchPosition.label)
-                    .font(.caption)
+                    .font(.caption.weight(.medium))
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
-            .background(step.switchPosition == .open ? Color.green.opacity(0.15) : Color.red.opacity(0.15))
+            .background(step.switchPosition == .open ? Color.green.opacity(0.12) : Color.red.opacity(0.12))
             .foregroundStyle(step.switchPosition == .open ? .green : .red)
             .clipShape(Capsule())
         }
     }
+}
+
+#Preview("Existing Recipe") {
+    NavigationStack {
+        RecipeDetailView(recipe: previewRecipe)
+    }
+    .modelContainer(previewContainer)
+}
+
+#Preview("New Recipe") {
+    NavigationStack {
+        RecipeDetailView(recipe: nil)
+    }
+    .modelContainer(previewContainer)
 }

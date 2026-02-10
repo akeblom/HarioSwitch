@@ -8,6 +8,7 @@ final class BrewTimerManager {
         let actionType: ActionType
         let switchPosition: SwitchPosition
         let waterML: Double?
+        let cumulativeWaterML: Double?
 
         var formattedDuration: String {
             let minutes = durationSeconds / 60
@@ -56,13 +57,19 @@ final class BrewTimerManager {
     }
 
     init(steps: [BrewStep]) {
-        self.steps = steps.sorted { $0.sortIndex < $1.sortIndex }.map {
-            StepSnapshot(
-                sortIndex: $0.sortIndex,
-                durationSeconds: $0.durationSeconds,
-                actionType: $0.actionType,
-                switchPosition: $0.switchPosition,
-                waterML: $0.waterML
+        let sorted = steps.sorted { $0.sortIndex < $1.sortIndex }
+        var runningTotal: Double = 0
+        self.steps = sorted.map { step in
+            if let water = step.waterML {
+                runningTotal += water
+            }
+            return StepSnapshot(
+                sortIndex: step.sortIndex,
+                durationSeconds: step.durationSeconds,
+                actionType: step.actionType,
+                switchPosition: step.switchPosition,
+                waterML: step.waterML,
+                cumulativeWaterML: step.waterML != nil ? runningTotal : nil
             )
         }
         self.totalDuration = self.steps.reduce(0) { $0 + $1.durationSeconds }

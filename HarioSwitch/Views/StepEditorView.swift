@@ -27,22 +27,80 @@ struct StepEditorView: View {
     var body: some View {
         Form {
             Section("Action") {
-                Picker("Type", selection: $actionType) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 4), spacing: 10) {
                     ForEach(ActionType.allCases, id: \.self) { type in
-                        Label(type.label, systemImage: type.systemImage)
-                            .tag(type)
+                        Button {
+                            withAnimation(.snappy(duration: 0.2)) {
+                                actionType = type
+                            }
+                        } label: {
+                            VStack(spacing: 6) {
+                                ZStack {
+                                    Circle()
+                                        .fill(actionType == type ? type.color.opacity(0.15) : Color(.systemGray6))
+                                        .frame(width: 44, height: 44)
+                                    Image(systemName: type.systemImage)
+                                        .font(.body)
+                                        .foregroundStyle(actionType == type ? type.color : .secondary)
+                                }
+                                Text(type.label)
+                                    .font(.caption.weight(.medium))
+                                    .foregroundStyle(actionType == type ? type.color : .secondary)
+                            }
+                            .padding(.vertical, 8)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                    .stroke(actionType == type ? type.color.opacity(0.4) : .clear, lineWidth: 1.5)
+                            )
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
-                .pickerStyle(.segmented)
+                .padding(.vertical, 4)
             }
 
             Section("Switch Position") {
-                Picker("Position", selection: $switchPosition) {
+                HStack(spacing: 10) {
                     ForEach(SwitchPosition.allCases, id: \.self) { pos in
-                        Text(pos.label).tag(pos)
+                        Button {
+                            withAnimation(.snappy(duration: 0.2)) {
+                                switchPosition = pos
+                            }
+                        } label: {
+                            HStack(spacing: 6) {
+                                Image(systemName: pos.systemImage)
+                                    .font(.subheadline)
+                                Text(pos.label)
+                                    .font(.subheadline.weight(.medium))
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .background(
+                                switchPosition == pos
+                                    ? (pos == .open ? Color.green.opacity(0.12) : Color.red.opacity(0.12))
+                                    : Color(.systemGray6)
+                            )
+                            .foregroundStyle(
+                                switchPosition == pos
+                                    ? (pos == .open ? .green : .red)
+                                    : .secondary
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(
+                                        switchPosition == pos
+                                            ? (pos == .open ? Color.green.opacity(0.3) : Color.red.opacity(0.3))
+                                            : .clear,
+                                        lineWidth: 1.5
+                                    )
+                            )
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
-                .pickerStyle(.segmented)
+                .padding(.vertical, 4)
             }
 
             Section("Water") {
@@ -64,6 +122,7 @@ struct StepEditorView: View {
                         Text("Duration")
                         Spacer()
                         Text(formattedDuration)
+                            .font(.body.monospacedDigit())
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -110,4 +169,18 @@ struct StepEditorView: View {
             recipe.steps.append(newStep)
         }
     }
+}
+
+#Preview("New Step") {
+    NavigationStack {
+        StepEditorView(recipe: previewRecipe, step: nil)
+    }
+    .modelContainer(previewContainer)
+}
+
+#Preview("Edit Step") {
+    NavigationStack {
+        StepEditorView(recipe: previewRecipe, step: previewRecipe.sortedSteps.first!)
+    }
+    .modelContainer(previewContainer)
 }

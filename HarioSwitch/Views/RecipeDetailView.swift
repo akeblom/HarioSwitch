@@ -129,6 +129,16 @@ struct RecipeDetailView: View {
             }
             if !isNew {
                 ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        withAnimation {
+                            recipe.isFavorite.toggle()
+                        }
+                    } label: {
+                        Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                            .foregroundStyle(recipe.isFavorite ? .red : .secondary)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
                 }
             }

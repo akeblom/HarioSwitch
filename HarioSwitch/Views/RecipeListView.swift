@@ -6,6 +6,14 @@ struct RecipeListView: View {
     @Query(sort: \Recipe.name) private var recipes: [Recipe]
     @State private var showingNewRecipe = false
 
+    private var favoriteRecipes: [Recipe] {
+        recipes.filter { $0.isFavorite }
+    }
+
+    private var otherRecipes: [Recipe] {
+        recipes.filter { !$0.isFavorite }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -13,15 +21,18 @@ struct RecipeListView: View {
                     emptyState
                 } else {
                     LazyVStack(spacing: 12) {
-                        ForEach(recipes) { recipe in
-                            NavigationLink(value: recipe) {
-                                RecipeCardView(recipe: recipe, onDelete: {
-                                    withAnimation {
-                                        modelContext.delete(recipe)
-                                    }
-                                })
+                        if !favoriteRecipes.isEmpty {
+                            sectionHeader("Favorites")
+                            ForEach(favoriteRecipes) { recipe in
+                                recipeLink(recipe)
                             }
-                            .buttonStyle(.plain)
+                        }
+
+                        if !otherRecipes.isEmpty {
+                            sectionHeader("Recipes")
+                            ForEach(otherRecipes) { recipe in
+                                recipeLink(recipe)
+                            }
                         }
                     }
                     .padding(.horizontal)
@@ -52,6 +63,28 @@ struct RecipeListView: View {
         }
     }
 
+    private func recipeLink(_ recipe: Recipe) -> some View {
+        NavigationLink(value: recipe) {
+            RecipeCardView(recipe: recipe, onDelete: {
+                withAnimation {
+                    modelContext.delete(recipe)
+                }
+            })
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func sectionHeader(_ title: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .textCase(.uppercase)
+            Spacer()
+        }
+        .padding(.top, title == "Recipes" && !favoriteRecipes.isEmpty ? 8 : 0)
+    }
+
     private var emptyState: some View {
         VStack(spacing: 16) {
             Spacer()
@@ -71,7 +104,7 @@ struct RecipeListView: View {
 }
 
 struct RecipeCardView: View {
-    let recipe: Recipe
+    @Bindable var recipe: Recipe
     let onDelete: () -> Void
 
     var body: some View {
@@ -89,6 +122,17 @@ struct RecipeCardView: View {
                 }
 
                 Spacer()
+
+                Button {
+                    withAnimation {
+                        recipe.isFavorite.toggle()
+                    }
+                } label: {
+                    Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                        .font(.body)
+                        .foregroundStyle(recipe.isFavorite ? .red : .secondary)
+                }
+                .buttonStyle(.plain)
 
                 Text(recipe.formattedTotalDuration)
                     .font(.subheadline.weight(.medium).monospacedDigit())

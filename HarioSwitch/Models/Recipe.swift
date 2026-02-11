@@ -6,6 +6,7 @@ final class Recipe {
     var name: String
     var coffeeGrams: Double
     var waterML: Double
+    var isFavorite: Bool
 
     @Relationship(deleteRule: .cascade, inverse: \BrewStep.recipe)
     var steps: [BrewStep]
@@ -30,10 +31,11 @@ final class Recipe {
         return String(format: "%d:%02d", minutes, seconds)
     }
 
-    init(name: String, coffeeGrams: Double, waterML: Double, steps: [BrewStep] = []) {
+    init(name: String, coffeeGrams: Double, waterML: Double, steps: [BrewStep] = [], isFavorite: Bool = false) {
         self.name = name
         self.coffeeGrams = coffeeGrams
         self.waterML = waterML
         self.steps = steps
+        self.isFavorite = isFavorite
     }
 }

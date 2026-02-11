@@ -7,7 +7,7 @@ struct HarioSwitchApp: App {
         WindowGroup {
             RecipeListView()
         }
-        .modelContainer(for: Recipe.self) { result in
+        .modelContainer(for: Recipe.self) { result in          
             if case .success(let container) = result {
                 DefaultRecipes.seedIfNeeded(context: container.mainContext)
             }

@@ -7,35 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B26D2EFDB39093700A64382 /* HarioSwitchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188D58D02611D586C051B8C /* HarioSwitchApp.swift */; };
-		81A57AF044B8DC1D379D0EA1 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB29BA78884CAE7BE04B2A /* ActionType.swift */; };
-		EAA76073796ED9609BBA20E8 /* SwitchPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */; };
-		1B090EF52C34D9DAE094235D /* BrewStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16910417BFFDAE62737ABDF4 /* BrewStep.swift */; };
-		27724CA35DB383BDD20A2D8E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB073BA777B6B1A03BE773CC /* Recipe.swift */; };
 		170FE0986DDC2B23163B33B4 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */; };
+		1B090EF52C34D9DAE094235D /* BrewStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16910417BFFDAE62737ABDF4 /* BrewStep.swift */; };
 		26DBEE9021C8C091A4DFF8EE /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */; };
-		D53C40EB43E0E6D4C1E3903F /* StepEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CF55E7E24E6221FDF79600 /* StepEditorView.swift */; };
-		AF2C49BA4F7882C0C7F0C1F1 /* BrewTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */; };
+		27724CA35DB383BDD20A2D8E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB073BA777B6B1A03BE773CC /* Recipe.swift */; };
+		3B26D2EFDB39093700A64382 /* HarioSwitchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188D58D02611D586C051B8C /* HarioSwitchApp.swift */; };
 		71DD7E98B96A6447CED0103E /* BrewTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */; };
-		E03871BEE47EE5CE077B553E /* DefaultRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */; };
+		81A57AF044B8DC1D379D0EA1 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB29BA78884CAE7BE04B2A /* ActionType.swift */; };
 		99810209AD4FE3320BC122AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */; };
+		AF2C49BA4F7882C0C7F0C1F1 /* BrewTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */; };
+		D53C40EB43E0E6D4C1E3903F /* StepEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CF55E7E24E6221FDF79600 /* StepEditorView.swift */; };
+		E03871BEE47EE5CE077B553E /* DefaultRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */; };
+		EAA76073796ED9609BBA20E8 /* SwitchPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */; };
+		AA11BB22CC33DD44EE55FF66 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22CC33DD44EE55FF660011 /* PreviewSampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		81918909E83595C8F4212CCC /* HarioSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarioSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0188D58D02611D586C051B8C /* HarioSwitchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarioSwitchApp.swift; sourceTree = "<group>"; };
-		7DCB29BA78884CAE7BE04B2A /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
-		FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPosition.swift; sourceTree = "<group>"; };
 		16910417BFFDAE62737ABDF4 /* BrewStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewStep.swift; sourceTree = "<group>"; };
-		EB073BA777B6B1A03BE773CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
-		E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		7DCB29BA78884CAE7BE04B2A /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		81918909E83595C8F4212CCC /* HarioSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarioSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		97CF55E7E24E6221FDF79600 /* StepEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepEditorView.swift; sourceTree = "<group>"; };
+		A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTimerView.swift; sourceTree = "<group>"; };
 		DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTimerManager.swift; sourceTree = "<group>"; };
+		E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		EB073BA777B6B1A03BE773CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRecipes.swift; sourceTree = "<group>"; };
-		A8E322B9AD0FDA30220B81A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB354D3BD99E63B847B54D25 /* SwitchPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPosition.swift; sourceTree = "<group>"; };
+		BB22CC33DD44EE55FF660011 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8D3FC6DB5D0827F168A73277 = {
+		0CC0392CA0D899B5AD0FDA4A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E4F9B9B828BD894C7208C99D /* HarioSwitch */,
-				1BADDC1D73C1A20F347483E1 /* Products */,
+				F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */,
+				BB22CC33DD44EE55FF660011 /* PreviewSampleData.swift */,
 			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		1BADDC1D73C1A20F347483E1 /* Products */ = {
@@ -63,6 +66,41 @@
 				81918909E83595C8F4212CCC /* HarioSwitch.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2575A824E1DE54D2B26A9A8B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3FAA64621DC4E411E8DE8EC1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8D3FC6DB5D0827F168A73277 = {
+			isa = PBXGroup;
+			children = (
+				E4F9B9B828BD894C7208C99D /* HarioSwitch */,
+				1BADDC1D73C1A20F347483E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CECDDFA5EF2AE0232F90708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */,
+				E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */,
+				97CF55E7E24E6221FDF79600 /* StepEditorView.swift */,
+				CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E4F9B9B828BD894C7208C99D /* HarioSwitch */ = {
@@ -88,41 +126,6 @@
 				EB073BA777B6B1A03BE773CC /* Recipe.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		9CECDDFA5EF2AE0232F90708 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C7C78D4AE2ECD968E6542205 /* RecipeListView.swift */,
-				E2F99567F1DC01433E8E7071 /* RecipeDetailView.swift */,
-				97CF55E7E24E6221FDF79600 /* StepEditorView.swift */,
-				CCA4ECCB6CF7720253606857 /* BrewTimerView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3FAA64621DC4E411E8DE8EC1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				DBF49A18E6E6ABD878A15A83 /* BrewTimerManager.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		0CC0392CA0D899B5AD0FDA4A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				F217C3EFC498DA7C46CE4747 /* DefaultRecipes.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		2575A824E1DE54D2B26A9A8B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				8C3F6623BB305E0C066E1849 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,12 +208,42 @@
 				AF2C49BA4F7882C0C7F0C1F1 /* BrewTimerView.swift in Sources */,
 				71DD7E98B96A6447CED0103E /* BrewTimerManager.swift in Sources */,
 				E03871BEE47EE5CE077B553E /* DefaultRecipes.swift in Sources */,
+				AA11BB22CC33DD44EE55FF66 /* PreviewSampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7757C39349D56478DC25EEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
+				DEVELOPMENT_TEAM = 4FMYJBX83B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		AD85203BDABA5D77C97D3165 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -274,6 +307,35 @@
 			};
 			name = Debug;
 		};
+		C424DBF796944789872A5962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
+				DEVELOPMENT_TEAM = 4FMYJBX83B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		D3517031FC52F361791832BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,62 +389,6 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C424DBF796944789872A5962 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7757C39349D56478DC25EEF7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HarioSwitch/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harioswitch.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

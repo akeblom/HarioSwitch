@@ -18,7 +18,7 @@ struct BrewTimerView: View {
 
                 VStack(spacing: 24) {
                     stepInfoSection
-                    timerCircle
+                    mainTimerSection
                     overallProgressSection
                     controlButtons
                     upcomingStepsList
@@ -58,20 +58,6 @@ struct BrewTimerView: View {
                             .font(.title2.bold())
                             .foregroundStyle(step.actionType.color)
 
-                        if let target = step.cumulativeWaterML {
-                            HStack(spacing: 4) {
-                                Image(systemName: "drop.fill")
-                                    .font(.caption)
-                                Text("\(target, specifier: "%.0f") ml")
-                                    .font(.subheadline.weight(.semibold))
-                            }
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .background(.cyan.opacity(0.12))
-                            .foregroundStyle(.cyan)
-                            .clipShape(Capsule())
-                        }
-
                         HStack(spacing: 4) {
                             Image(systemName: step.switchPosition.systemImage)
                             Text(step.switchPosition.label)
@@ -88,44 +74,113 @@ struct BrewTimerView: View {
         }
     }
 
-    // MARK: - Timer Circle
+    // MARK: - Main Timer Section
 
-    private var timerCircle: some View {
-        ZStack {
-            Circle()
-                .stroke(Color(.systemGray5), lineWidth: 14)
-
-            Circle()
-                .trim(from: 0, to: 1 - manager.stepProgress)
-                .stroke(
-                    AngularGradient(
-                        colors: [
-                            (manager.currentStep?.actionType.color ?? .blue).opacity(0.6),
-                            (manager.currentStep?.actionType.color ?? .blue)
-                        ],
-                        center: .center,
-                        startAngle: .degrees(-90),
-                        endAngle: .degrees(270)
-                    ),
-                    style: StrokeStyle(lineWidth: 14, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(.linear(duration: 1), value: manager.stepProgress)
-
-            VStack(spacing: 6) {
-                Text(formatTime(manager.remainingInStep))
-                    .font(.system(size: 52, weight: .thin, design: .rounded))
-                    .contentTransition(.numericText())
-                    .monospacedDigit()
-
-                Text("remaining")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-                    .textCase(.uppercase)
-                    .tracking(1)
+    private var mainTimerSection: some View {
+        Group {
+            if let step = manager.currentStep {
+                if let target = step.cumulativeWaterML {
+                    waterFillTimer(step: step, target: target)
+                } else {
+                    plainTimer(step: step)
+                }
             }
         }
-        .frame(width: 230, height: 230)
+    }
+
+    private func waterFillTimer(step: BrewTimerManager.StepSnapshot, target: Double) -> some View {
+        GeometryReader { geo in
+            ZStack(alignment: .bottom) {
+                // Background
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(.cyan.opacity(0.06))
+
+                // Fill from bottom
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(
+                        LinearGradient(
+                            colors: [.cyan.opacity(0.35), .cyan.opacity(0.15)],
+                            startPoint: .bottom,
+                            endPoint: .top
+                        )
+                    )
+                    .frame(height: geo.size.height * manager.stepProgress)
+                    .animation(.linear(duration: 1), value: manager.stepProgress)
+
+                // Border
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .strokeBorder(.cyan.opacity(0.2), lineWidth: 1)
+
+                // Content
+                VStack(spacing: 8) {
+                    Text("POUR TO")
+                        .font(.caption.weight(.semibold))
+                        .tracking(1.5)
+                        .foregroundStyle(.cyan.opacity(0.7))
+
+                    HStack(alignment: .firstTextBaseline, spacing: 4) {
+                        Text("\(target, specifier: "%.0f")")
+                            .font(.system(size: 48, weight: .bold, design: .rounded))
+                        Text("ml")
+                            .font(.title2.weight(.medium))
+                    }
+                    .foregroundStyle(.cyan)
+
+                    if let water = step.waterML {
+                        Text("+\(water, specifier: "%.0f") ml this step")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer().frame(height: 4)
+
+                    Text(formatTime(manager.remainingInStep))
+                        .font(.system(size: 36, weight: .thin, design: .rounded))
+                        .contentTransition(.numericText())
+                        .monospacedDigit()
+                        .foregroundStyle(.primary.opacity(0.8))
+
+                    Text("remaining")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                        .textCase(.uppercase)
+                        .tracking(1)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+        .frame(height: 220)
+    }
+
+    private func plainTimer(step: BrewTimerManager.StepSnapshot) -> some View {
+        VStack(spacing: 8) {
+            Text(formatTime(manager.remainingInStep))
+                .font(.system(size: 56, weight: .thin, design: .rounded))
+                .contentTransition(.numericText())
+                .monospacedDigit()
+
+            Text("remaining")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
+                .textCase(.uppercase)
+                .tracking(1)
+
+            // Thin progress bar
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(step.actionType.color.opacity(0.15))
+                    Capsule()
+                        .fill(step.actionType.color.opacity(0.5))
+                        .frame(width: geo.size.width * manager.stepProgress)
+                        .animation(.linear(duration: 1), value: manager.stepProgress)
+                }
+            }
+            .frame(height: 6)
+            .padding(.horizontal, 40)
+            .padding(.top, 4)
+        }
+        .frame(height: 220)
     }
 
     // MARK: - Overall Progress
@@ -236,9 +291,13 @@ struct BrewTimerView: View {
                             Spacer()
 
                             if let target = step.cumulativeWaterML {
-                                Text("\(target, specifier: "%.0f")ml")
-                                    .font(.caption)
-                                    .foregroundStyle(.cyan)
+                                HStack(spacing: 3) {
+                                    Image(systemName: "drop.fill")
+                                        .font(.caption2)
+                                    Text("\(target, specifier: "%.0f")ml")
+                                        .font(.caption.weight(.semibold))
+                                }
+                                .foregroundStyle(.cyan)
                             }
 
                             Text(step.formattedDuration)
